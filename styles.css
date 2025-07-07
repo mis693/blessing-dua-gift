@@ -1,0 +1,424 @@
+/* General Body and Background */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.background-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('public/stars.gif'); /* Falling stars GIF */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.7; /* Adjust as needed */
+}
+
+/* Container Styling */
+.container {
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent black for content */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(128, 0, 128, 0.5); /* Purple glow */
+    text-align: center;
+    max-width: 90%;
+    width: 700px; /* Max width for content */
+    margin: 30px auto; /* Centering with margin */
+    box-sizing: border-box;
+}
+
+/* Common Elements */
+h1 {
+    color: #ffd700; /* Gold color for headings */
+    margin-bottom: 25px;
+    font-size: 2.2em;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+}
+
+button {
+    background-color: #8a2be2; /* BlueViolet */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #9370db; /* MediumPurple */
+    transform: translateY(-2px);
+}
+
+input[type="text"] {
+    width: calc(100% - 24px); /* Full width minus padding */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #6a5acd; /* SlateBlue */
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1.1em;
+    box-sizing: border-box;
+}
+
+input[type="text"]::placeholder {
+    color: #ccc;
+}
+
+/* index.html specific styles */
+.index-page .banner {
+    margin-bottom: 30px;
+}
+
+.index-page .islamic-banner {
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.index-page .input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: white;
+    font-size: 1.8em;
+    display: none; /* Hidden by default */
+}
+
+.loading-overlay.active {
+    display: flex;
+}
+
+.loading-gif {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.loading-overlay p {
+    margin-top: 15px;
+    font-size: 1.2em;
+}
+
+.loading-overlay #countdown {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* receiver.html specific styles */
+.receiver-page .dua-display {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px rgba(128, 0, 128, 0.7);
+}
+
+.receiver-page .dua-gif {
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.receiver-page .dua-text {
+    font-size: 1.6em;
+    font-style: italic;
+    line-height: 1.6;
+    color: #f0f8ff; /* AliceBlue */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* sender.html specific styles */
+.sender-page .input-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.sender-page label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: #e0e0e0;
+}
+
+.sender-page .dua-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.dua-card {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(128, 0, 128, 0.4);
+}
+
+.dua-card:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(128, 0, 128, 0.7);
+}
+
+.dua-card.selected {
+    border-color: #ffd700; /* Gold border when selected */
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+.dua-card .dua-preview {
+    max-width: 100px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.dua-card p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: #f0f8ff;
+    margin: 0;
+}
+
+.generated-link-section {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 30px;
+    box-shadow: 0 0 15px rgba(128, 0, 128, 0.7);
+}
+
+.generated-link-section p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.generated-link-section input {
+    width: calc(100% - 130px); /* Adjust width for button */
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.generated-link-section button {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    padding: 10px 20px;
+    margin-top: 0;
+}
+
+.share-options {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.share-btn.whatsapp {
+    background-color: #25D366;
+}
+.share-btn.whatsapp:hover {
+    background-color: #1DA851;
+    transform: translateY(-2px);
+}
+
+.share-btn.facebook {
+    background-color: #1877F2;
+}
+.share-btn.facebook:hover {
+    background-color: #145CBF;
+    transform: translateY(-2px);
+}
+
+.share-btn.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+.share-btn.instagram:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Footer Ads and Donation */
+.footer-ads-donations {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.donate-button {
+    background-color: #008000; /* Green */
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 128, 0, 0.4);
+}
+
+.donate-button:hover {
+    background-color: #006400; /* Darker Green */
+    transform: translateY(-3px);
+}
+
+/* Google AdSense Placeholder */
+.adsbygoogle {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 15px;
+    min-height: 100px; /* Placeholder height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #bbb;
+    font-size: 0.9em;
+    width: 100%;
+    max-width: 728px; /* Typical leaderboard size */
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    .dua-card {
+        padding: 15px;
+    }
+
+    .dua-card p {
+        font-size: 1em;
+    }
+
+    .receiver-page .dua-text {
+        font-size: 1.3em;
+    }
+
+    .share-btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .generated-link-section input {
+        width: calc(100% - 110px);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        margin: 15px auto;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .index-page .islamic-banner {
+        max-width: 120px;
+    }
+
+    .receiver-page .dua-gif {
+        max-width: 200px;
+    }
+
+    .receiver-page .dua-text {
+        font-size: 1.1em;
+    }
+
+    .dua-options {
+        grid-template-columns: 1fr;
+    }
+
+    .generated-link-section input,
+    .generated-link-section button {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .generated-link-section button {
+        margin-top: 10px;
+    }
+
+    .share-options {
+        flex-direction: column;
+        gap: 10px;
+    }
+  }
+  
