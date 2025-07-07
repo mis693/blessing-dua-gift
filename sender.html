@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎁 Apna Tohfa Banayen</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="public/islamic-animation.gif" type="image/gif">
+</head>
+<body>
+    <div class="background-stars"></div>
+    <div class="container sender-page">
+        <h1>Send Your Blessing Gift!</h1>
+        <div class="input-group">
+            <label for="senderNameInput">Your Name:</label>
+            <input type="text" id="senderNameInput" placeholder="Enter your name">
+        </div>
+
+        <h2>Choose a Dua:</h2>
+        <div class="dua-options">
+            <div class="dua-card" data-dua-id="1">
+                <img src="public/dua1.gif" alt="Dua 1" class="dua-preview">
+                <p>"Ya Allah, mere pyaare [name] ki har dua qubool kar, uski zindagi ke har mod par sirf khushiyon ke phool khila de. Usko har musibat se mehfooz rakh aur uske chehre par hamesha muskurahat sajaye rakh. Ameen, summa Ameen."</p>
+            </div>
+            <div class="dua-card" data-dua-id="2">
+                <img src="public/dua2.gif" alt="Dua 2" class="dua-preview">
+                <p>"Ilahi, mere aziz [name] ko har imtehaan mein kaamyabi aur buland maqam ata farma. Uski har subah barkat bhari ho aur har shaam sukoon bhari. Uske dil ko iman ki roshni se munawwar kar de aur uski har khwahish poori farma. Ameen."</p>
+            </div>
+            <div class="dua-card" data-dua-id="3">
+                <img src="public/dua3.gif" alt="Dua 3" class="dua-preview">
+                <p>"Ya Rab, [name] aur uske pyaare ghar walon ko behtareen sehat, dil ka sukoon, aur har shobay mein kamiyabi se nawaz. Unki har mushkil aasan kar de aur unhe duniyawi aur deeni dono tarah se khushhaal rakh. Unke rizq mein barkat ata farma. Ameen."</p>
+            </div>
+            <div class="dua-card" data-dua-id="4">
+                <img src="public/dua4.gif" alt="Dua 4" class="dua-preview">
+                <p>"May Allah, the Most Merciful, bless my dear [name] with endless peace that calms the soul, success that shines brightly in every endeavor, and grant all their heartfelt prayers. May their life be a testament to His boundless blessings and mercy. Ameen."</p>
+            </div>
+            <div class="dua-card" data-dua-id="5">
+                <img src="public/dua5.gif" alt="Dua 5" class="dua-preview">
+                <p>"O Allah, the Almighty, grant [name] unwavering strength to face every challenge, profound happiness that fills every moment, and abundant mercy in every step they take. Guide them on the path of righteousness and illuminate their heart with Your divine light. Ameen."</p>
+            </div>
+            <div class="dua-card" data-dua-id="6">
+                <img src="public/dua6.gif" alt="Dua 6" class="dua-preview">
+                <p>"Bless [name] with a heart overflowing with profound gratitude and a life truly full of blessings."</p>
+            </div>
+        </div>
+
+        <button id="generateLinkButton">Generate Link</button>
+
+        <div id="generatedLinkSection" class="generated-link-section">
+            <p>Share this link:</p>
+            <input type="text" id="generatedLink" readonly>
+            <button id="copyLinkButton">Copy Link</button>
+            <div class="share-options">
+                <a id="whatsappShare" href="#" target="_blank" class="share-btn whatsapp">WhatsApp</a>
+                <a id="facebookShare" href="#" target="_blank" class="share-btn facebook">Facebook</a>
+                <a id="instagramShare" href="#" target="_blank" class="share-btn instagram">Instagram</a>
+            </div>
+        </div>
+
+        <div class="footer-ads-donations">
+            <button class="donate-button" onclick="window.location.href='donate.html'">Donate for Poor Children Education</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
